@@ -1,0 +1,662 @@
+
+1)Are the HTML tags and elements the same things?
+  
+
+- 
+HTML tags and elements are related but not exactly the same things in HTML.
+
+  HTML Tags: Tags are the fundamental building blocks of HTML syntax. They are used to define elements within an HTML document. 
+  Tags usually come in pairs: an opening tag and a closing tag.
+  HTML tags like <br>,<hr>,<img>,<link>,<mata>,<area>,<input>,<source> etc.
+  
+  HTML Elements: Elements are made up of tags, along with the content they enclose.
+  HTML elements like <p>.....</p>, etc.
+
+2)What are tags and attributes in HTML?
+
+- In HTML tags and attributes are fundamental components used to define and structure web documents.
+
+  element is written in angle brackets which is known as tags.
+  They are enclosed in angle brackets '< >' and are used to define elements within an HTML document.
+  '<p>' is the opening tag.
+  
+'</p>' is the closing tag. 
+
+  attribute is use to define the characteristics on an HTML element and is placed inside the element opening tag.
+  for major attributeused : class,id,title,style.
+  Example : <body bgcolor="red">.
+
+3)What are void elements in HTML? With Example.
+
+- 
+
+Void elements in HTML are elements that do not have any content or closing tag. 
+  They are self-closing tags and do not have any child elements or text nodes. 
+  Void elements are defined by the HTML specification to only include the start tag and optional attributes.
+
+  Example : <hr>,<br>,<img>,<link>,<mata>,<area>,<base>,<input>,<source> etc.
+
+4)What are HTML Entities? With Example.
+
+- 
+T
+HTML entities are special codes used to represent characters that have special meaning in HTML, 
+  or characters that cannot easily be typed or rendered by normal keyboard input. 
+  
+  HTML entities are written using an ampersand (&) followed by a specific code or name, and ending with a semicolon (;).
+  There are two types of HTML entities: named entities and numeric entities.
+
+  Named entities are easier to remember and use descriptive names to represent characters.
+  Named Entities Example : &lt; - Represents the less-than sign '<'.
+                           &gt; - Represents the greater-than sign '>'.
+           		   &amp; - Represents the ampersand '&'.
+            		   
+&quot; - Represents the double quotation mark '"'.
+
+  Numeric entities represent characters using their Unicode code points. They are written as '&#' followed by the decimal code point and ending with ';'.
+  Numeric Entities Example : '&#169;' - Represents the copyright symbol '©'.  
+ 			     '&#8364;' - Represents the euro sign '€'.
+
+5)What are different types of Lists in HTML? With Example.
+
+- There is a three type of lists.
+  1. order list
+  2. unorder list
+  3. description list
+
+  1. order list :  An ordered list represents a list of items where each item is sequentially numbered or ordered.
+                   Each item in an ordered list is wrapped in '<li>' (list item) tags. 
+		   Example : <ol type="," start="28">
+				<li> list 1 </li>
+			     </ol>
+  
+  2. unorder list : An ordered list type is disc(default),circle,square.
+                    Like ordered lists, each item in an unordered list is wrapped in '<li>' tags.
+		    Example : <ul type="square">
+				 <li> list 1 </li>
+			      </ul>
+ 				
+  3. description list : A definition list consists of terms (defined by '<dt>' tags) and their definitions (defined by '<dd>' tags). 
+			This type of list is typically used to display glossaries, dictionaries, or other collections of name-value pairs.
+			Example : <dl>
+				 	<dt> html </dt>
+					<dd> is a markeup language </dd>
+				  </dl>
+
+6)What is the "class" attribute in HTML? With Example.
+
+- In HTML, the "class" attribute is used to specify one or more class names for an element. 
+  Classes are used in conjunction with CSS (Cascading Style Sheets) to apply styling to elements or to group elements with similar characteristics.
+  Classes are defined in CSS using a period ('.') followed by the class name. 
+  In HTML, the 'class' attribute is used to apply a class to an element. You can apply multiple classes to an element by separating them with spaces.
+  Example : .head1{
+		color : red;
+	    }
+	    .head2{
+		color : green;
+	    }
+
+	    <body>
+		<h1 class = "head1">Headding 1</h1>  
+		<h1 class = "head2">Headding 2</h1>
+	    </body>
+
+7)What is the difference between the 'id' attribute and the 'class attribute of HTML Elements? With Example.
+
+- In HTML, the 'id' and 'class' attributes are used to assign identifiers to HTML elements, but they serve different purposes and have different rules for usage.
+  
+  id attribute :  The 'id' attribute is used to uniquely identify a single HTML element.
+   		  The 'id' attribute is used to uniquely identify a single HTML element.
+		  Commonly used for targeting a specific element with CSS, JavaScript, or when linking to a specific part of the page.
+                  Example : <style>
+				#p1{
+					color : red;
+				}
+				#p2{
+					color : blue;
+				}
+			    </style>
+				
+			    <body>
+				<p id="p1">paragraph 1</p1>
+				<p id="p2">paragraph 2</p1>
+			    </body>
+ 
+  class attribute : The 'class' attribute is used to classify multiple HTML elements into groups.
+		    Multiple elements can share the same class value. An element can also have multiple classes
+		    Example : .head1{
+				color : red;
+	   		      }
+	   		     .head2{
+				color : green;
+	   		     }
+
+	    		     <body>
+				<h1 class = "head1">Headding 1</h1>  
+				<h1 class = "head2">Headding 2</h1>
+	    		     </body>
+
+8)What are the various formatting tags in HTML.
+
+- 1. <b> - Bold tag
+  2. <strong> - strong tag
+  3. <i> - italic tag
+  4. <em> - emphasis tag
+  5. <cite> - cite tag
+  6. <u> - underline tag
+  7. <mark> - mark tag
+  8. <small> - small tag
+  9. <del> - delete tag
+  10. <ins> - insert tag
+  11. <sub> - Subscript tag
+  12. <sup> - Superscript tag
+  13. <code> - code tag
+  14. <q> - quotation
+  15. <blockquote> - block quotation
+  16. <abbr> - Abbreviation tag
+  17. <address> - address progress tag
+  18. <marque> - marque tag
+  19. <u> - underline tag
+  20. <kbd> - keybord tag
+
+9)How is Cell padding different from Cell Spacing? With Example.
+
+- Cell Padding
+
+  	Cell padding refers to the space between the content of a cell and the cell's border. 
+  	It essentially adds space inside each cell, making the content appear less cramped.
+
+  Cell Spacing
+
+	Cell spacing refers to the space between individual cells in a table. 
+	It adds space outside the cells, separating them from each other.
+
+	Example : <body>
+			<table border=" 1 " style=" width: 450px;" cellpading = "10px" cellspacing= "10px" rules= "a11";
+				<tr>
+					<th>sr.no</th>
+					<th>full name></th>
+					<th>position></th>
+					<th>salary></th>
+				</tr>
+			</table>
+		  </body>
+
+10)How can we club two or more rows or columns into a single row or column in an HTML table? With Example.
+
+- To club two or more rows or columns into a single row or column in an HTML table, you use the 'rowspan' and 'colspan' attributes within the '<td>' or '<th>' elements. 
+  
+  colspan : is used to merge multiple columns into a single column. 
+  rowspan : is used to merge multiple rows into a single row.
+
+  Example : <table border = "1" style = "width: 300px;">
+		<tr>
+			<th rowspan = "2"></th> 
+			<th calspan = "2">Average</th>
+			<th rowspan = "2">red eyes</th>
+		</tr>
+		<tr>
+			<th> height</th>
+			<th> weight</th>
+		</tr>
+
+11)What is the difference between a block-level element and an inline element?
+
+- 
+In HTML, block-level elements and inline elements serve different purposes and have distinct behaviors in how they are displayed and how they interact with other elements on a webpage. 
+  Here are the key differences between them:
+
+	1-Block-level Elements
+  
+ 		
+Display Characteristics:
+			
+
+Block-level elements occupy the entire width of their parent container by default, taking up a new line.
+
+		Content Containment:
+
+
+			They can contain other block-level elements and inline elements.
+
+		Box Model:
+			They can have a fixed width and height.
+	
+	Example :  <div>, <p>, <h1> - <h6>, <ul>, <ol>, <li>, <table>, <section>, <article>, and <footer>.
+
+	2-Inline Elements
+
+		
+Display Characteristics:
+			
+
+Inline elements occupy only the space bounded by the tags defining the element.
+
+		Content Containment:
+			
+
+They can contain only other inline elements or text.
+ 
+		Box Model:
+			
+
+Respect only horizontal box model properties but ignore vertical properties.
+
+	Example : <span>, <a>, <strong>, <em>, <img>, <br>, <i>, and <b>.
+
+12)How to create an Hyperlink in HTML? With Example.
+
+- Creating a hyperlink in HTML is done using the <a> (anchor) tag. 
+  The href attribute within the <a> tag specifies the destination URL. 
+
+  <a href="URL">Link Text</a>
+
+  <body>
+	<p>Visit <a href="https://www.openai.com">OpenAI</a> to learn more about AI.</p>
+  </body>
+
+  Additional Attributes
+
+	1-
+Target Attribute:
+
+
+		Specifies where to open the linked document.
+	
+		
+_blank: Opens the link in a new tab.
+		
+_self: Opens the link in the same frame.
+		
+_parent: Opens the link in the parent frame.
+		
+_top: Opens the link in the full body of the window.
+
+	2-Title Attribute:
+		
+
+Provides additional information about the link, usually displayed as a tooltip when the mouse hovers over the link.
+
+13)What is the use of an iframe tag? With Example.
+
+- The <iframe> tag in HTML is used to embed another HTML document within the current document.
+  It stands for "inline frame" and allows you to display content from another source, such as a different website or a different part of the same site, within a frame on the current page.
+
+  Uses of <iframe>:
+
+	1-
+Embedding External Content:
+		
+Display content from another website within your own page.
+
+	2-Including Documents or Media:
+		
+Embed documents, presentations, videos, maps, or other media files.
+
+	3-Sandboxed Content:
+		
+Provide a sandboxed environment for running untrusted content securely.
+
+	Example : <iframe src="url" frameborder="10" height="300px" width="500px"></iframe>
+
+14)What is the use of a span tag? Explain With Example.
+
+- The <span> tag in HTML is an inline container used to mark up a part of a text or a part of a document. 
+  It does not inherently represent anything and is primarily used for styling and manipulating a specific portion of text or content with CSS or JavaScript.
+
+  Uses of <span> Tag:
+
+	1-
+Styling Specific Parts of Text:
+		
+Apply specific CSS styles to a portion of text within a larger block.
+
+	2-
+JavaScript Manipulation:
+		
+Target specific portions of content for dynamic changes with JavaScript.
+
+	3-
+Grouping Inline Elements:
+		
+Group inline elements for styling or scripting purposes without affecting the document flow.
+
+	Example : <style>
+        
+			.highlight {
+           
+				 color: red;
+            
+				 font-weight: bold;
+        
+		  }
+    
+		  </style>
+
+		  <body>
+			<p>This is an example of a paragraph with a <span class="highlight">highlighted</span> word.</p>
+		  
+</body>
+
+15)How to insert a picture into a background image of a web page? With Example.
+
+- we can set background attribute in the body tag to set an image as the background of the webpage.
+  we will need to specify the url or the location of the image which we want to set to the background attribute of the body tag.
+
+	Example : <style>
+			p{
+				background-image: url('img-girl.jpg');
+			}
+		  </style> 
+
+16)How are active links different from normal link?
+
+- Active links differ from normal (or inactive) links in several key ways, primarily in their state and behavior within a web page or application.
+
+	State:
+		
+Normal Links:	
+
+Default State:	These are the default state of links before any user interaction. 
+				They appear as standard, unvisited links, often styled with default colors (e.g., blue for hyperlinks) and underline.
+
+				Visited State:	After a user has clicked on a link and visited the linked page, the link may change color to indicate that it has been visited (typically purple). 
+		
+		Active Links:	
+
+Active State: These are links in the process of being clicked.
+			 	When a user clicks on a link and holds the mouse button down, the link enters an active state. 
+				This state usually lasts only as long as the mouse button is held down.
+
+	CSS Styling:
+			
+Normal Links:	
+
+Styled using CSS pseudo-classes such as :link (for unvisited links) and :visited (for visited links).
+				
+				Example : a:link {
+  
+						color: blue;
+					  
+}
+					  
+a:visited {
+  
+						color: purple;
+					  
+}
+
+			Active Links:
+
+	Styled using the :active pseudo-class in CSS. 
+					This pseudo-class applies styles during the time a link is being clicked.
+
+				Example : a:active {
+  
+						color: red;
+  
+						background-color: yellow;
+					  
+} 
+
+17)What are the different tags to separate section of text?
+
+- <div>:
+	
+
+The <div> tag is a block-level element used to group together HTML elements to apply CSS styles or perform actions with JavaScript.
+	
+	Example : <div class="section">
+  
+			<p>This is a section of text.</p>
+		  
+</div>
+
+  <p>:
+	
+
+The <p> tag is used to define a paragraph. 
+	It is a block-level element that automatically adds some spacing before and after the text.
+
+	Example : <p>This is a paragraph of text.</p>
+
+  <h1> to <h6>:
+	
+
+The <h1> to <h6> tags are used to define headings, with <h1> being the highest level and <h6> the lowest. 
+	They provide semantic meaning and help with the structure of the document.
+
+	Example : <h1>Main Heading</h1>
+		  
+<h2>Subheading</h2>
+
+  <section>:
+
+
+	The <section> tag defines a section in a document, such as chapters, headers, footers, or any other sections of the document.
+
+	Example : <section>
+ 
+			 <h2>Section Title</h2>
+ 
+			 <p>Content of the section.</p>
+		  
+</section>
+
+  <article>:
+	
+
+The <article> tag specifies independent, self-contained content, which is often used for blog posts, news articles, or forum posts.
+	
+	Example : <article>
+  
+			<h2>Article Title</h2>
+  
+			<p>Content of the article.</p>
+		  
+</article>
+
+  <nav>:
+	
+
+The <nav> tag defines a section of navigation links. 
+	It is typically used for menus, tables of contents, or other navigational items.
+
+	Example : <nav>
+ 
+			 <ul>
+   
+			 <li><a href="#home">Home</a></li>
+    
+			 <li><a href="#about">About</a></li>
+ 
+			 </ul>
+		  
+</nav>
+
+  <aside>:
+	
+
+The <aside> tag defines content that is tangentially related to the content around it, such as sidebars, call-out boxes, or advertisements.
+
+	Example : <aside>
+  
+			<p>This is an aside section.</p>
+		  
+</aside>
+
+  <header>:
+	
+
+The <header> tag defines a header for a document or section, typically containing introductory content or navigational links.
+
+	Example : <header>
+  
+			<h1>Website Title</h1>
+  
+			<nav>
+    
+				<a href="#home">Home</a>
+   
+				 <a href="#about">About</a>
+  
+			</nav>
+			
+</header>
+
+  <footer>:
+	
+
+The <footer> tag defines a footer for a document or section, typically containing information about the author, copyright, links to related documents, etc.
+
+	Example : <footer>
+ 
+			 <p>&copy; 2024 My Website</p>
+		  
+</footer>
+
+  <main>:
+	
+
+The <main> tag specifies the main content of a document. 
+	There should only be one <main> element per document.
+
+	Example : <main>
+ 
+			 <h2>Main Content</h2>
+ 
+			 <p>This is the main content of the document.</p>
+		  
+</main>
+
+18)What is SVG?
+
+- SVG : 
+
+	
+SVG stands for Scalable Vector Graphics.
+	It is an XML-based format for describing two-dimensional vector graphics. 
+	SVG is used to define graphics for the web, and it is a W3C recommendation.
+
+  Example : cx and cy: The coordinates of the center of the circle.
+	    
+r: The radius of the circle.
+	    
+stroke: The color of the circle's outline.
+	    
+stroke-width: The width of the circle's outline.
+	    
+fill: The fill color of the circle.
+
+	<svg height = "500px" width v= "100%">
+		<rect x = "10" height = "100px" width = "100px" rx = "10px" ry = "10px"
+
+		style = "fill : white; stroke : blue;
+		stroke-width : 3px"></rect>
+
+	<circle cx = "100" cy = "100" r = "50"
+		style = "fill : white; stroke : blue;
+		stroke-width : 3px"></circle>
+
+	<line x1 = "200" y1 = "100" x2 = "300" y2 = "200"
+		style = "fill : white; stroke : blue;
+		stroke-width : 3px"></line>
+
+19)What is the difference between HTML and XHTML?
+
+- HTML (HyperText Markup Language) and XHTML (Extensible HyperText Markup Language) are both markup languages used for creating web pages, but they have some significant differences : 
+
+
+	1-Syntax and Rules:
+
+
+
+		HTML:	
+Syntax is more lenient and forgiving.
+			
+Tags and attributes are case-insensitive.
+			
+Closing tags for some elements (e.g., <img>, <input>) are optional.
+			
+Attribute values can be unquoted if they do not contain spaces or special characters. 
+
+		XHTML:	
+Syntax is stricter and follows XML rules.
+			
+Tags and attributes are case-sensitive (typically lowercase).
+			
+All elements must be properly closed (e.g., <img />, <input />).
+			
+Attribute values must be quoted. 
+
+	2-Compatibility:
+		
+
+		
+HTML:	
+Designed to be more flexible and tolerant of errors.
+			
+Browsers are designed to render HTML even if it contains errors.
+
+		XHTML:	
+Requires well-formed markup that adheres to XML rules.
+			
+Browsers must parse XHTML documents as XML, which means they will not render documents with errors.
+
+20)What are logical and physical tags in HTML?
+
+- In HTML, tags can be categorized into logical (semantic) and physical (presentational) tags.
+  Understanding the difference between these two types of tags is important for creating well-structured and accessible web pages.
+
+  Logical (Semantic) Tags :
+ 
+	
+Logical tags, also known as semantic tags, describe the meaning and structure of the content. 
+  	They do not define how the content should be displayed but rather its role and importance within the document. 
+  	These tags help improve the readability of the HTML code and enhance accessibility and SEO.
+ 
+  Example : 1 - <header>: Defines a header section for a document or section.
+	    2 - 
+<nav>: Represents a section of the page that links to other pages or parts within the page (navigation links).
+	    3 - 
+<section>: Defines a section in a document.
+	    4 - 
+<article>: Represents a self-contained piece of content that can be independently distributed or reused.
+	    5 - 
+<aside>: Contains content that is tangentially related to the content around it (like sidebars).
+	    6 - <footer>: Defines a footer for a document or section.
+	    7 - 
+<main>: Represents the main content of the document.
+	    8 - 
+<mark>: Highlights or marks text that is of special interest or relevance.
+	    9 - 
+<strong>: Indicates that the enclosed text is of strong importance or urgency.
+	    10 - 
+<em>: Stands for emphasis, which generally means that the enclosed text should be italicized.
+
+  Physical Tags : 
+
+	
+Physical tags, also known as presentational tags, define the appearance of the content. 
+	These tags are generally used to apply specific styles to content directly within the HTML document. 
+	However, their use is discouraged in favor of CSS for styling, as using CSS separates content from presentation and enhances maintainability.
+
+  Example : 1 - <b>: Makes the text bold.
+	    2 - 
+<i>: Italicizes the text.
+	    3 - 
+<u>: Underlines the text.
+	    4 - 
+<small>: Decreases the text size.
+	    5 - 
+<big>: Increases the text size.
+	    6 - 
+<sub>: Displays the text as subscript.
+	    7 - 
+<sup>: Displays the text as superscript.
+	    8 - 
+<tt>: Renders the text in a teletype or monospaced font.
+	    9 - 
+<strike>: Puts a strikethrough on the text.
+	    10 - 
+<font>: Defines font size, color, and face for the text.
