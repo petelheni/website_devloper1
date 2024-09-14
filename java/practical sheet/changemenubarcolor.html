@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>change on scroll</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            padding: 20px 64px;
+            background-color: rgba(49, 245, 49, 0.5);
+            backdrop-filter: blur(10px) brightness(60%);
+            align-items: center;
+            box-shadow: 0 0 20px white;
+            justify-content: space-between;
+        }
+
+        .navchange {
+            background-color: rgba(64, 243, 228, 0.5);
+            transition: 2s ease-out;
+        }
+
+        .logo {
+            filter: drop-shadow(0 0 10px white);
+        }
+
+        .logo img {
+            width: 50px;
+            object-fit: cover;
+
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .navbar ul {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar a {
+            font-size: 18px;
+            padding: 20px;
+            color: white;
+            text-shadow: 0 0 10px wheat;
+        }
+
+        .img-sec .img {
+            width: 100%;
+            height: 100vh;
+            filter: drop-shadow(0 0 20px black);
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: light 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes light {
+            0% {
+                filter: brightness(80%);
+            }
+
+            50% {
+                filter: brightness(120%)hue-rotate(50deg);
+            }
+
+            100% {
+                filter: brightness(80%);
+            }
+        }
+
+        .img-sec h2 {
+            font-size: 50px;
+            text-align: center;
+            padding: 80px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="https://img.freepik.com/free-photo/hand-with-sphere-abstract-background_23-2150697306.jpg"
+                    alt="logo" />
+            </div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Show Room</a></li>
+                <li><a href="">Contact us</a></li>
+                <li><a href="">About us</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="img-sec">
+            <div class="img">
+                <img src="https://plus.unsplash.com/premium_photo-1673306778968-5aab577a7365?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VyZW5pdHl8ZW58MHx8MHx8fDA%3D"
+                    alt="sun" />
+            </div>
+            <h2>Images</h2>
+            <div class="img">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKhjlStfInUfiEWgt0JiRp4wrflpTJR2lJ6w&s"
+                    alt="sun" />
+            </div>
+        </div>
+    </main>
+    <script>
+        let navbar = document.querySelector(".navbar");
+        window.addEventListener("scroll", () => {
+            let s = this.scrollY;
+            if (s > (window.innerHeight) * 0.9) {
+                navbar.classList.add("navchange");
+            }
+            else {
+                navbar.classList.remove("navchange");
+            }
+        })
+    </script>
+</body>
+
+</html>
