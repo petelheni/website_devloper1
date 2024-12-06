@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        .box {
+            background-color: rgb(0, 139, 16);
+            height: 100px;
+            width: 100px;
+            font-size: 30px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        display flex            d-flex 
+        gap                     gap-* (0 to 5)
+        flex-direction          flex-values
+        justify-content         justify-content-value
+        align-items             align-items-value
+    -->
+    <div class="p-5 d-flex gap-4 justify-content-between">
+        <div class="box flex-grow-2">1</div>
+        <div class="box gap-5">4</div>
+        <div class="box align-items-center">3</div>
+    </div>
+</body>
+
+</html>
