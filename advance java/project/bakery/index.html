@@ -246,7 +246,7 @@
                 const cartItem = document.createElement('div');
                 cartItem.classList.add('cart-item');
                 cartItem.innerHTML = `
-                    <span>${item.name} - $${item.price}</span>
+                    <span>${item.name} - Rs${item.price}</span>
                     <button class="btn btn-sm btn-danger remove-from-cart" data-index="${index}">Remove</button>
                 `;
                 cartItems.appendChild(cartItem);
