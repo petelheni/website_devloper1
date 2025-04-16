@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h3 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        .print {
+            font-size: 18px;
+            color: #333;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .error {
+            color: red;
+            font-size: 16px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <input type="number" id="start" placeholder="Start Number" />
+            <input type="number" id="end" placeholder="End Number" />
+            <button id="display">Display</button>
+        </div>
+        <h3>Prime Numbers</h3>
+        <div class="print"></div>
+        <div class="error"></div>
+    </div>
+    <script>
+        const startInput = document.querySelector("#start");
+        const endInput = document.querySelector("#end");
+        const displayButton = document.querySelector("#display");
+        const printDiv = document.querySelector(".print");
+        const errorDiv = document.querySelector(".error");
+
+        displayButton.addEventListener("click", () => {
+            printDiv.textContent = "";
+            errorDiv.textContent = "";
+
+            const start = Number(startInput.value);
+            const end = Number(endInput.value);
+
+            // Validate inputs
+            if (isNaN(start) || isNaN(end) || start <= 0 || end <= 0 || start > end) {
+                errorDiv.textContent = "Please enter valid positive numbers (Start ≤ End).";
+                return;
+            }
+
+            const primes = findPrimes(start, end);
+            if (primes.length === 0) {
+                printDiv.textContent = "No prime numbers found in the given range.";
+            } else {
+                printDiv.textContent = primes.join(", ");
+            }
+
+
+            startInput.value = "";
+            endInput.value = "";
+        });
+
+
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+
+        function findPrimes(start, end) {
+            const primes = [];
+            for (let i = start; i <= end; i++) {
+                if (isPrime(i)) primes.push(i);
+            }
+            return primes;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+D:\heni\react\movie\MovieApi\obj\Debug\net8.0\MovieApi.csproj.AssemblyReference.cache
+D:\heni\react\movie\MovieApi\obj\Debug\net8.0\MovieApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\heni\react\movie\MovieApi\obj\Debug\net8.0\MovieApi.AssemblyInfoInputs.cache
+D:\heni\react\movie\MovieApi\obj\Debug\net8.0\MovieApi.AssemblyInfo.cs
+D:\heni\react\movie\MovieApi\obj\Debug\net8.0\MovieApi.csproj.CoreCompileInputs.cache
+D:\heni\react\movie\MovieApi\obj\Debug\net8.0\MovieApi.MvcApplicationPartsAssemblyInfo.cs
+D:\heni\react\movie\MovieApi\obj\Debug\net8.0\MovieApi.MvcApplicationPartsAssemblyInfo.cache
+D:\heni\react\movie\MovieApi\obj\Debug\net8.0\MovieApi.sourcelink.json

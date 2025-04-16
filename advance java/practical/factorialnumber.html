@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factorial Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        input,
+        button {
+            font-size: 18px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input {
+            flex: 1;
+            margin-right: 10px;
+            width: calc(100% - 110px);
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .print {
+            font-size: 20px;
+            color: #007bff;
+            margin-top: 20px;
+            word-spacing: 5px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <input type="number" id="input" placeholder="Enter a number" />
+            <button id="display">Calculate</button>
+        </div>
+        <div class="print"></div>
+    </div>
+    <script>
+        const input = document.querySelector("#input");
+        const display = document.querySelector("#display");
+        const print = document.querySelector(".print");
+
+        function factorial(num) {
+            if (num <= 1) return 1;
+            return num * factorial(num - 1);
+        }
+
+        display.addEventListener("click", () => {
+            const num = Number(input.value);
+
+            if (!Number.isInteger(num) || num < 0) {
+                print.textContent = "Please enter a positive integer.";
+                print.style.color = "red";
+                return;
+            }
+
+            const fact = factorial(num);
+            print.textContent = `Factorial of ${num} is: ${fact}`;
+            print.style.color = "#007bff";
+        });
+    </script>
+</body>
+
+</html>

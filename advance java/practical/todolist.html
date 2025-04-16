@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .inputfeild {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        label {
+            flex: 1;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        input {
+            flex: 2;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s;
+        }
+
+        li:hover {
+            background-color: #f1f1f1;
+        }
+
+        .cancelBtn {
+            color: #ff4d4f;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border: none;
+            background: none;
+            transition: color 0.3s;
+        }
+
+        .cancelBtn:hover {
+            color: #d32f2f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="inputfeild">
+            <label for="inputValue">Enter Technical Language :</label>
+            <input type="text" class="inputValue" id="inputValue" />
+            <button id="calbtn">Add</button>
+        </div>
+        <ul id="print"></ul>
+    </div>
+    <script>
+        const inputValue = document.getElementById("inputValue");
+        const addButton = document.getElementById("calbtn");
+        const print = document.getElementById("print");
+
+        addButton.addEventListener("click", () => {
+            const value = inputValue.value.trim();
+
+            if (value === "") return;
+
+            const listItem = document.createElement("li");
+            const textNode = document.createTextNode(value);
+
+            const removeButton = document.createElement("button");
+            removeButton.textContent = "X";
+            removeButton.className = "cancelBtn";
+
+            removeButton.addEventListener("click", () => {
+                print.removeChild(listItem);
+            });
+
+            listItem.appendChild(textNode);
+            listItem.appendChild(removeButton);
+            print.appendChild(listItem);
+
+            inputValue.value = "";
+        });
+    </script>
+</body>
+
+</html>

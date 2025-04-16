@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encapsulated Table Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f1c40f;
+            color: white;
+        }
+
+        td {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="employeeTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Employee Name</th>
+                <th>Date of Join</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+
+        class EncapData {
+            constructor(data) {
+                this.data = Array.isArray(data) ? data : [];
+            }
+
+            retrieveData() {
+                return this.data;
+            }
+
+            addData(row) {
+                if (row && typeof row === "object") {
+                    this.data.push(row);
+                }
+            }
+        }
+
+
+        class TableData {
+            constructor(data, tableId) {
+                this.data = data;
+                this.table = document.querySelector(tableId);
+            }
+
+            display() {
+                const tbody = this.table.querySelector("tbody");
+                tbody.innerHTML = "";
+
+                this.data.forEach((rowData) => {
+                    const row = document.createElement("tr");
+
+                    Object.values(rowData).forEach((value) => {
+                        const td = document.createElement("td");
+                        td.textContent = value;
+                        row.appendChild(td);
+                    });
+
+                    tbody.appendChild(row);
+                });
+            }
+
+            addRow(rowData) {
+                const tbody = this.table.querySelector("tbody");
+                const row = document.createElement("tr");
+
+                Object.values(rowData).forEach((value) => {
+                    const td = document.createElement("td");
+                    td.textContent = value;
+                    row.appendChild(td);
+                });
+
+                tbody.appendChild(row);
+            }
+        }
+
+
+        const employeeData = [
+            {
+                ID: 1,
+                "Employee Name": "Akash",
+                "Date of Join": "30-10-2024",
+                Salary: 25000,
+            },
+            {
+                ID: 2,
+                "Employee Name": "Dipesh",
+                "Date of Join": "28-02-2024",
+                Salary: 35000,
+            },
+        ];
+
+
+        const encapsulatedData = new EncapData(employeeData);
+
+
+        const tableShow = new TableData(encapsulatedData.retrieveData(), "#employeeTable");
+        tableShow.display();
+
+
+        const newEmployee = {
+            ID: 3,
+            "Employee Name": "Priya",
+            "Date of Join": "15-03-2024",
+            Salary: 30000,
+        };
+
+        encapsulatedData.addData(newEmployee);
+        tableShow.addRow(newEmployee);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="movieApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Database</title>
+    <script src="https://cdn.jsdelivr.net/npm/angular/angular.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        input,
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #f4f4f4;
+            padding: 10px;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkred;
+        }
+
+        .movie-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .movie-title {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .movie-poster {
+            width: 100px;
+            height: auto;
+            margin-top: 5px;
+        }
+
+        .search-box {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body ng-controller="MovieController">
+    <h1>🎬 Welcome to the Movie Database 🎬</h1>
+    <h2>Add a New Movie</h2>
+    <input type="text" ng-model="newMovie.name" placeholder="Movie Name">
+    <input type="text" ng-model="newMovie.director" placeholder="Director">
+    <input type="text" ng-model="newMovie.actor" placeholder="Actor">
+    <input type="text" ng-model="newMovie.releaseYear" placeholder="Release Year">
+    <input type="text" ng-model="newMovie.poster" placeholder="Poster Image URL">
+    <button ng-click="addMovie()">Add Movie</button>
+
+    <div class="search-box">
+        <h2>Search Movies</h2>
+        <input type="text" ng-model="searchText" placeholder="Search by name, director, or actor">
+    </div>
+
+    <h2>Current Movie List</h2>
+    <ul>
+        <li ng-repeat="movie in movies | filter:searchFilter">
+            <div class="movie-item">
+                <span class="movie-title">{{movie.name}}</span>
+                <span>Director: {{movie.director}}</span>
+                <span>Actor: {{movie.actor}}</span>
+                <span>Release Year: {{movie.releaseYear}}</span>
+                <img ng-if="movie.poster" ng-src="{{movie.poster}}" alt="Poster" class="movie-poster">
+            </div>
+            <button ng-click="deleteMovie($index)">Delete</button>
+        </li>
+    </ul>
+
+    <script>
+        angular.module('movieApp', []).controller('MovieController', function ($scope) {
+            $scope.movies = [
+                { name: "sanam teri kasam", director: "Christopher Nolan", actor: "Leonardo DiCaprio", releaseYear: "2010", poster: "https://m.media-amazon.com/images/I/51xJ1U7sWbL._AC_.jpg" },
+                { name: "The Matrix", director: "The Wachowskis", actor: "Keanu Reeves", releaseYear: "1999", poster: "https://m.media-amazon.com/images/I/51EG732BV3L.jpg" },
+                { name: "Interstellar", director: "Christopher Nolan", actor: "Matthew McConaughey", releaseYear: "2014", poster: "https://m.media-amazon.com/images/I/71n58WcH1xL._AC_SL1111_.jpg" }
+            ];
+
+            $scope.newMovie = {};
+
+            $scope.addMovie = function () {
+                if ($scope.newMovie.name) {
+                    $scope.movies.push({
+                        name: $scope.newMovie.name,
+                        director: $scope.newMovie.director,
+                        actor: $scope.newMovie.actor,
+                        releaseYear: $scope.newMovie.releaseYear,
+                        poster: $scope.newMovie.poster
+                    });
+                    $scope.newMovie = {};
+                }
+            };
+
+            $scope.deleteMovie = function (index) {
+                $scope.movies.splice(index, 1);
+            };
+
+            $scope.searchFilter = function (movie) {
+                if (!$scope.searchText) return true;
+                const text = $scope.searchText.toLowerCase();
+                return movie.name.toLowerCase().includes(text) ||
+                    movie.director.toLowerCase().includes(text) ||
+                    movie.actor.toLowerCase().includes(text);
+            };
+        });
+    </script>
+</body>
+
+</html>

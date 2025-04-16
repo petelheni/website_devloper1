@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Category and Mobile Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        table table {
+            width: 100%;
+            border: none;
+        }
+
+        table table td {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align: center;">Category and Mobile Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>_ID</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script>
+        class Category {
+            constructor(id, categoryName) {
+                this.id = id;
+                this.categoryName = categoryName;
+            }
+
+            getGeneralRow() {
+                return `
+            <tr>
+              <td>${this.id}</td>
+              <td>${this.categoryName}</td>
+            </tr>
+          `;
+            }
+        }
+
+        class Mobile extends Category {
+            constructor(id, categoryName, modelId, brand) {
+                super(id, categoryName);
+                this.modelId = modelId;
+                this.brand = brand;
+            }
+
+            getFullRow() {
+                return (
+                    this.getGeneralRow() +
+                    `
+            <tr>
+              <td colspan="2">
+                <table>
+                  <tr>
+                    <td><strong>Model ID:</strong> ${this.modelId}</td>
+                    <td><strong>Brand:</strong> ${this.brand}</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            `
+                );
+            }
+        }
+
+        const tableBody = document.getElementById("tableBody");
+        const mobileData = new Mobile(1, "Mobile", 101, "Samsung");
+
+        tableBody.innerHTML = mobileData.getFullRow();
+    </script>
+</body>
+
+</html>

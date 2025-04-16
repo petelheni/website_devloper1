@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage - User Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .main {
+            width: 400px;
+            padding: 20px;
+            margin: 50px auto;
+            border: 2px solid #ddd;
+            background-color: #fff;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-data {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        button {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        td button:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h2>Enter User Details</h2>
+        <form class="form-data" id="userForm">
+            <input type="text" id="username" placeholder="Enter Your Name" required />
+            <input type="email" id="email" placeholder="Enter Your Email" required />
+            <input type="password" id="password" placeholder="Enter Your Password" required />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <table id="userTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+        const userTable = document.querySelector("#userTable");
+        const username = document.querySelector("#username");
+        const email = document.querySelector("#email");
+        const password = document.querySelector("#password");
+        const userForm = document.querySelector("#userForm");
+        const tbody = document.querySelector("#tbody");
+
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+
+        function displayUsers() {
+            tbody.innerHTML = "";
+            users.forEach((user, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${user.username}</td>
+            <td>${user.email}</td>
+            <td><button onclick="deleteUser(${index})">Delete</button></td>
+          `;
+                tbody.appendChild(row);
+            });
+            userTable.style.display = users.length > 0 ? "table" : "none";
+        }
+
+
+        userForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const newUser = {
+                username: username.value,
+                email: email.value,
+                password: password.value,
+            };
+
+            users.push(newUser);
+            localStorage.setItem("users", JSON.stringify(users));
+            username.value = "";
+            email.value = "";
+            password.value = "";
+            displayUsers();
+        });
+
+
+        function deleteUser(index) {
+            users.splice(index, 1);
+            localStorage.setItem("users", JSON.stringify(users));
+            displayUsers();
+        }
+
+        displayUsers();
+    </script>
+</body>
+
+</html>
