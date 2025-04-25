@@ -7,9 +7,9 @@
 .header-img .banner-about {
     width: 100%;
     height: 100%;
-    background: url(https://images.hindustantimes.com/img/2023/01/10/550x309/While-the-past-year-was-about-revenge-and-revival-_1673351689949.jpg);
+    background: url(https://p.w3layouts.com/demos_new/template_demo/05-02-2022/tours-liberty-demo_Free/1559675193/web/assets/images/inner-banner.jpg);
     background-repeat: no-repeat;
-    background-position: auto;
+    background-position: top left;
     background-size: cover;
     overflow: hidden;
     position: relative;
@@ -40,14 +40,9 @@ ul {
     gap: 10px;
 }
 
-.about-sec {
-    height: 80vh;
-}
-
 .about-sec .about-right a {
     margin: 20px 0;
 }
-
 
 .a-social {
     background-color: blue;
@@ -240,7 +235,6 @@ ul {
 
     .statistics {
         margin-top: 150px;
-        color: #f2f5f7;
     }
 
     .blog-body {
@@ -279,8 +273,6 @@ ul {
 
     .statistics {
         margin-top: 400px;
-        color: azure;
-        font-size: large;
     }
 
     .blog-body {

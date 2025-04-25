@@ -52,11 +52,9 @@
     box-sizing: border-box;
 }
 
-
 html,
 body {
     width: 100vw;
-    height: 100vh;
     font-family: var(--font-roboto);
     overflow-x: hidden;
 }
@@ -159,7 +157,7 @@ a {
 }
 
 .main {
-    background: url(imges/banner1.jpg);
+    background: url(imgs/banner1.jpg);
 }
 
 .main2 {
@@ -443,7 +441,6 @@ select {
     background-size: cover;
     vertical-align: middle;
     transition: 0.5s ease-in-out;
-
 }
 
 .feature-slide .slides .img-class {
@@ -570,8 +567,8 @@ p {
 /* ======================= statistics-sec ============ */
 .statistics-container {
     width: 100vw;
-    height: 80vh;
-    background: url(https://p.w3layouts.com/demos_new/template_demo/05-02-2022/tours-liberty-demo_Free/1559675193/web/assets/images/about2.jpg) rgba(7, 7, 51, 0.912);
+    padding: 100px 0;
+    background: url(https://p.w3layouts.com/demos_new/template_demo/05-02-2022/tours-liberty-demo_Free/1559675193/web/assets/images/map.png) rgba(7, 7, 51, 0.912);
     background-position: center;
     margin: 80px 0;
     color: var(--white);
@@ -705,9 +702,8 @@ p {
 
 .tour-features .tour-container {
     width: 80%;
-    height: 90%;
     margin: 80px auto;
-    padding: 0 20px;
+    padding: 20px;
     display: flex;
     place-items: center;
 }
@@ -715,7 +711,7 @@ p {
 .tour-container .tour-left {
     width: 50%;
     height: 90vh;
-    background: url(https://lerablog.org/wp-content/uploads/2013/05/travelling-alone.jpg);
+    background: url(https://p.w3layouts.com/demos_new/template_demo/05-02-2022/tours-liberty-demo_Free/1559675193/web/assets/images/about2.jpg)no-repeat;
     background-size: cover;
     border-radius: 10px;
 }
@@ -903,7 +899,6 @@ p {
 /* ===============================discount-container======== */
 .discount-class {
     width: 100vw;
-    height: 100vh;
     padding: 100px 90px;
 }
 
@@ -1007,7 +1002,6 @@ p {
 /* ===========================footer-sec=========== */
 .footer-class {
     width: 100vw;
-    height: 70vh;
     background-color: #0e2244;
     padding: 80px 60px;
 }
@@ -1087,6 +1081,7 @@ p {
 .f-email input {
     font-size: var(--f16);
     text-align: center;
+    padding: 0 60px;
 }
 
 .f-btn button {
