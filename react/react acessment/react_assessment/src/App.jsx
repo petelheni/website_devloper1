@@ -1,7 +1,7 @@
 // App.js
 import React from 'react';
-import { ThemeProvider } from './ThemeContext';
-import Login from './Login';
+import { ThemeProvider } from './component/ThemeContext';
+import Login from './component/Login';
 
 function App() {
   return (
