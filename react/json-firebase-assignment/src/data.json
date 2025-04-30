@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "name": "Nirali",
+            "role": "Back-end",
+            "city": "Navsari",
+            "id": "2"
+        },
+        {
+            "id": "3",
+            "name": "Akash",
+            "role": "Front-end",
+            "city": "Baroda"
+        },
+        {
+            "id": "4",
+            "name": "Mahek",
+            "role": "Full-stack",
+            "city": "Ahemdabad"
+        },
+        {
+            "id": "1",
+            "name": "Heni",
+            "role": "Front-end",
+            "city": "Surat"
+        }
+    ]
+}
