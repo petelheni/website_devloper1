@@ -1,0 +1,67 @@
+Question 1: What is Redux, and why is it used in React applications? Explain the core concepts of actions, reducers, and the store.
+
+Redux is a state management library often used with React to manage and centralize application state. It helps make your app's behavior more predictable and easier to debug, especially as it grows larger and more complex.
+Why is Redux used in React applications?
+React is good at managing local state inside components. But when multiple components need to share state (like user data, theme, or shopping cart), managing it across many components can get messy. Redux solves this by storing the state in a single place called the store, so all components can access or update it in a consistent way.
+
+Core Concepts of Redux
+
+1.Store
+The single source of truth.
+It holds the entire state of your application.
+Created using createStore() or configureStore() (from Redux Toolkit).
+You can read from the store and dispatch actions to update it.
+
+const store = configureStore({ reducer: rootReducer });
+
+
+2.Action
+An object that tells Redux what happened.
+Must have a type property (string).
+Can have a payload (data) too.
+
+const addTodoAction = {
+  type: "ADD_TODO",
+  payload: "Learn Redux",
+};
+
+
+3.Reducer
+A pure function that takes the current state and an action, and returns a new state.
+Reducers decide how the state should change based on the action type.
+
+const todoReducer = (state = [], action) => {
+  switch (action.type) {
+    case "ADD_TODO":
+      return [...state, action.payload];
+    default:
+      return state;
+  }
+};
+
+Flow of Redux (Simplified)
+
+1.A component dispatches an action (e.g., ADD_TODO).
+2.The reducer receives the action and current state.
+3.The reducer returns a new state.
+4.The store updates, and React components using that state re-render.
+
+Question 2: 
+How does Recoil simplify state management in React compared to Redux?
+
+Recoil simplifies state management in React by working more naturally with how React already handles state. Instead of adding extra layers like Redux does (with actions, reducers, and a store), Recoil lets you manage shared state using familiar React-style hooks.
+How Recoil is simpler than Redux:
+1.Easier setup
+Recoil doesn’t need reducers, actions, or a big store configuration. You just define your state (called atoms) and use them directly in components.
+
+2.More React-like
+Recoil uses hooks like useRecoilState() and useRecoilValue() which feel just like useState(), making it easy to learn and use.
+
+3.Less boilerplate
+In Redux, you have to create actions, reducers, and connect everything. With Recoil, you only define atoms and selectors, then use them with hooks—less code to write and maintain.
+
+4.Supports both local and global state
+Recoil can be used for small pieces of state (like inside a single component) or shared global state across the app. It blends local and global state management well.
+
+5.Built for React
+Recoil was made specifically for React, so it takes advantage of React's rendering and hooks system. It automatically updates components when the state they use changes.
