@@ -16,7 +16,7 @@ const Login = () => {
         e.preventDefault()
 
         try {
-            const response = await fetch("http://localhost:3000/regdata");  //fetch all registered users from JSON server
+            const response = await fetch("http://localhost:3000/register");  //fetch all registered users from JSON server
             const users = await response.json()
 
             const matchuser = users.find( //users is the whole array of user objects.

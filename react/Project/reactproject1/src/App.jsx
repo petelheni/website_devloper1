@@ -1,26 +1,34 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Register from "./userlogin/Register";
-import Login from "./userlogin/Login";
-import Home from "./componetnt/Home";
-import Addtocart from "./componetnt/Addtocart";
-import Navbar from './componetnt/Navbar';
-import Footer from './footer/Footer';
+import React from 'react'
+import './App.css'
+import Addtocard from './components/Addtocard'
+import Navbar from './components/Navbar'
+import Product from './components/Product'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Login from './userlogin/Login'
+import Register from './userlogin/Register'
+import Protectrouts from './components/protectrouts'
+//import Footer from './footer/Footer'
 
-const App = () => {
+function App() {
+
   return (
-    <Router>
+    <>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route element={<Product />} path='/'></Route>
 
-      <Routes>
-        <Route path="/" element={<Register />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Addtocart" element={<Addtocart />} />
-        <Route path="/Navbar" element={<Navbar />} />
-      </Routes>
-      <Route path="/Footer" element={<Footer />} />
-    </Router>
-  );
-};
+          <Route element={<Protectrouts />} path="Addtocard">
+            <Route element={<Addtocard />} path='/Addtocard'></Route>
+          </Route>
 
-export default App;
+          <Route element={<Login />} path='/Login'></Route>
+          <Route element={<Register />} path='/Register'></Route>
+        </Routes>
+      </Router>
+
+    </>
+  )
+}
+
+export default App
