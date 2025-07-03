@@ -14,16 +14,13 @@ const Register = () => {
         e.preventDefault(); //Prevent default form behavior (page reload)
 
         try {
-            const result = await fetch("http://localhost:3000/register", {
+            const result = await fetch("http://localhost:5173/Register", {
                 method: "post",  //Send POST request to save user data
-                headers: {
-                    "Content-Type": "application/json"
-                },
                 body: JSON.stringify(regdata)
             })
 
-            if (result.ok) {
-                alert("Register successful");
+            if (result) {
+                alert("Regester succsecfull")
                 setregdata({
                     name: "",
                     email: "",
@@ -31,7 +28,7 @@ const Register = () => {
 
                 });
             } else {
-                alert("Register fail")
+                alert("Regester fail")
             }
 
         } catch (error) {
@@ -40,6 +37,7 @@ const Register = () => {
 
         }
     }
+
 
     return (
         <>
@@ -59,7 +57,10 @@ const Register = () => {
                             <label htmlFor="password" className="form-label">Password</label>
                             <input onChange={handlechange} value={regdata.pass} name='pass' type="password" className="form-control" id="password" required />
                         </div>
-
+                        <div className="mb-3 form-check">
+                            <input type="checkbox" className="form-check-input" id="check" required />
+                            <label className="form-check-label" htmlFor="check">Check me out</label>
+                        </div>
                         <button type="submit" className="btn btn-primary w-100">Register</button>
                     </form>
                 </div>
@@ -67,4 +68,6 @@ const Register = () => {
         </>
     );
 };
+
+
 export default Register

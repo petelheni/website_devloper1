@@ -35,7 +35,7 @@ const Addtocard = () => {
                                                 ? item.description.substring(0, 100) + "..."
                                                 : item.description}
                                         </p>
-                                        <h6 className="mt-2">Price: ${item.price}</h6>
+                                        <h6 className="mt-2">Price: RS {item.price}</h6>
                                         <button onClick={() => hendledelete(item.id)} className="btn btn-danger mt-3">Delete Item</button>
                                     </div>
                                 </div>

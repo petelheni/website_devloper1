@@ -16,24 +16,23 @@ const Login = () => {
         e.preventDefault()
 
         try {
-            const response = await fetch("http://localhost:3000/register");  //fetch all registered users from JSON server
+            const response = await fetch("http://localhost:5173/Register");
             const users = await response.json()
 
-            const matchuser = users.find( //users is the whole array of user objects.
-                // check if user credentials match those of a registered user 
-                (user) => user.email === logdata.email && user.pass === logdata.pass   //user is each object in the array during the .find() iteration.
+            const matchuser = users.find(
+                (user) => user.email === logdata.email && user.pass === logdata.pass
             )
 
             if (matchuser) {
                 alert("Login successfull")
-                sessionStorage.setItem("userdata", JSON.stringify(matchuser))  // userdata is a key that we give away ourselves
+                sessionStorage.setItem("userdata", JSON.stringify(matchuser))
                 setlogdata({
                     email: "",
                     pass: ""
                 })
-                navigate("/") // Upon login you will be directed to the home page
+                navigate("/")
             } else if (confirm("Invalid email or password. Please register.")) {
-                navigate("/Regestar")
+                navigate("/Registar")
             }
         } catch (error) {
             console.error("Login error:", error);
