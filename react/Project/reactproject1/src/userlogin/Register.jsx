@@ -11,11 +11,11 @@ const Register = () => {
         setregdata({ ...regdata, [e.target.name]: e.target.value })
     }
     const handlesubmite = async (e) => {
-        e.preventDefault(); //Prevent default form behavior (page reload)
+        e.preventDefault();
 
         try {
             const result = await fetch("http://localhost:5173/Register", {
-                method: "post",  //Send POST request to save user data
+                method: "post",
                 body: JSON.stringify(regdata)
             })
 
@@ -57,10 +57,7 @@ const Register = () => {
                             <label htmlFor="password" className="form-label">Password</label>
                             <input onChange={handlechange} value={regdata.pass} name='pass' type="password" className="form-control" id="password" required />
                         </div>
-                        <div className="mb-3 form-check">
-                            <input type="checkbox" className="form-check-input" id="check" required />
-                            <label className="form-check-label" htmlFor="check">Check me out</label>
-                        </div>
+
                         <button type="submit" className="btn btn-primary w-100">Register</button>
                     </form>
                 </div>

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
     const navigate = useNavigate()
+
     const [logdata, setlogdata] = useState({
         email: "",
         pass: ""
@@ -32,7 +33,7 @@ const Login = () => {
                 })
                 navigate("/")
             } else if (confirm("Invalid email or password. Please register.")) {
-                navigate("/Registar")
+                navigate("/Register")
             }
         } catch (error) {
             console.error("Login error:", error);
@@ -53,10 +54,7 @@ const Login = () => {
                             <label htmlFor="password" className="form-label">Password</label>
                             <input onChange={handlechange} value={logdata.pass} name='pass' type="password" className="form-control" id="password" required />
                         </div>
-                        <div className="mb-3 form-check">
-                            <input type="checkbox" className="form-check-input" id="check" required />
-                            <label className="form-check-label" htmlFor="check">Check me out</label>
-                        </div>
+
                         <button type="submit" className="btn btn-primary w-100">Login</button>
                     </form>
                 </div>
